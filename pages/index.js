@@ -17,7 +17,7 @@ export default function Home() {
 
         <p className={styles.description}>
           Get started with{' '}
-          <code className={styles.code}>/json/cdn-cgi/trace</code>
+          <code className={styles.code}>/api/trace</code>
         </p>
       </main>
 
