@@ -2,11 +2,11 @@ export const config = {
   runtime: 'experimental-edge',
 }
 
-export default async function (req) {
+export default async function handler(req) {
   let jsonData = {};
   const origin = req.headers.get("host");
-
-  await fetch('https://'+origin+'/cdn-cgi/trace')
+  
+  await fetch('https://1.1.1.1/cdn-cgi/trace')
   .then(res => res.text())
   .then(data => {
     for (let entry of data.split("\n")) {
