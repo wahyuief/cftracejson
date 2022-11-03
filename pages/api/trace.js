@@ -4,9 +4,8 @@ export const config = {
 
 export default async function handler(req) {
   let jsonData = {};
-  const origin = req.headers.get("host");
   
-  await fetch('https://' + origin + '/cdn-cgi/trace')
+  await fetch('https://1.1.1.1/cdn-cgi/trace')
   .then(res => res.text())
   .then(data => {
     for (let entry of data.split("\n")) {
@@ -18,7 +17,8 @@ export default async function handler(req) {
   return new Response(JSON.stringify(jsonData), {
     status: 200,
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
     }
   })
 }

@@ -1,9 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const origin = typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
   return (
     <div className={styles.container}>
       <Head>
@@ -18,8 +16,8 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Get started with{' '}
-          <code className={styles.code}>{origin}/json/cdn-cgi/trace</code>
+          <code className={styles.code}>/api/trace</code>{' '}
+          <code className={styles.code}>/json/cdn-cgi/trace</code>
         </p>
       </main>
 
